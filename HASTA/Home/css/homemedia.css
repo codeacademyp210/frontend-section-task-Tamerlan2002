@@ -1,0 +1,146 @@
+@media screen and (max-width:768px) {
+    header .contacts {
+        display: flex;
+        justify-content: center;
+    }
+    header .login {
+        justify-content: center
+    }
+}
+
+@media screen and (max-width:1200px) {
+    .pages li {
+        font-size: 11px;
+        width: 0%;
+    }
+}
+
+@media screen and (max-width:768px) {
+    header nav .logo {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width:1200px) {
+    .aboutUs .intro .black {
+        margin-left: 36%;
+    }
+}
+
+@media screen and (max-width:992px) {
+    .aboutUs .intro .black {
+        margin-left: 31.5%;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .aboutUs .intro .black {
+        margin-left: 25.5%;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .aboutUs .onlyimage {
+        padding-right: 0;
+        width: 100%;
+    }
+    .aboutUs .writings {
+        padding-right: 0;
+        padding-left: 12%;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .offers .ouroffers {
+        left: 0;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .services .ourservices {
+        left: 0;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .a-member {
+        padding-right: 0;
+    }
+}
+
+@media screen and(max-width:768px) {
+    .services .alloff p {
+        color: red;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .subscribe input {
+        width: 70%;
+        height: 25%;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .subscribe button {
+        width: 20%;
+        height: 25%;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .news .link {
+        display: none;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .news .date i {
+        display: none;
+    }
+    .news .date h2 {
+        font-size: 13px;
+        margin-top: 15px;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .parallax .writings h1 {
+        font-size: 20px;
+        ;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .parallax .writings button {
+        width: 25%;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .packages .pro-table img {
+        width: 35%;
+        height: 15%;
+        top: 2.7%;
+        left: 68%;
+    }
+}
+
+@media screen and (max-width:768px){
+    .portfolio button{
+        margin-left: 50%;
+        margin-top: 20%;
+    }
+}
+
+@media screen and (max-width:768px){
+    footer .bottom ul{
+        display: flex;
+        flex-direction: column;
+        justify-content: center
+    }
+}

@@ -1,0 +1,1309 @@
+/* with creative scrollbar */
+
+section {
+    overflow: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(73, 51, 199);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(219, 113, 14);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.fixedNav {
+    position: fixed;
+    top: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    color: white;
+    background-color: #fd602c;
+    padding: 0.5% 1%;
+    z-index: 2000;
+}
+
+ul {
+    list-style-type: none;
+    width: 100%;
+    height: 100%;
+}
+
+a:hover {
+    text-decoration: none !important;
+}
+
+button:focus {
+    outline: none;
+}
+
+.similarbut {
+    width: 30%;
+    padding: 1.5% 4%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: #fd602c;
+    transition: 0.2s ease;
+    border: 1px solid #fd602c;
+    border-radius: 125px;
+}
+
+.similarbut:hover {
+    background-color: #000;
+    border: 1px solid black;
+}
+
+.bordered {
+    width: 3%;
+    border-bottom: 2px solid black;
+    margin-left: 50%;
+    transform: translate(-50%, 0%);
+    margin-top: 2%;
+}
+
+header {
+    padding-bottom: 0;
+    position: relative;
+    z-index: 111;
+}
+
+header .loginpan {
+    background-color: #fd602c;
+    padding: 0%;
+}
+
+header .contacts p {
+    display: inline-block;
+    padding: 3% 0%;
+    color: white;
+    margin: 0;
+}
+
+header .loginpan p:nth-child(2) {
+    margin-left: 3%;
+}
+
+header .login {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+header .login p {
+    display: inline-block;
+    margin: 3% 0%;
+    color: white;
+    border-right: 1px solid white;
+    padding-right: 1.5%;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+header .login p:nth-child(2) {
+    margin-left: 1%;
+}
+
+header .login i {
+    margin-left: 2%;
+    color: white;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+header .login p:hover {
+    color: black;
+}
+
+header .login i:hover {
+    color: black;
+}
+
+nav {
+    width: 100%;
+    background-color: white;
+    position: sticky;
+    top: 0;
+}
+
+nav .logo img {
+    padding: 5% 0%;
+}
+
+nav .refpages {
+    height: 100%;
+}
+
+nav .pages {
+    padding: 0;
+    margin: 0;
+}
+
+header .refpages .pages li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+    width: 10%;
+    height: 100%;
+    position: relative;
+}
+
+header .refpages .pages li a {
+    display: block;
+    padding: 23% 15%;
+    color: #84848d;
+    font-weight: normal;
+}
+
+header .refpages .pages li:nth-child(1) a {
+    color: orangered
+}
+
+header .refpages .pages li .hovered {
+    position: absolute;
+    margin: 0%;
+    padding: 0;
+    width: 200%;
+    height: 100%;
+    top: 100%;
+    left: 0;
+    opacity: 0;
+    display: none;
+    z-index: 100;
+}
+
+header .refpages .pages li .hovered li {
+    width: 100%;
+    height: 100%;
+    color: #84848d;
+    background-color: rgb(243, 243, 243);
+    transition: color 0.2s ease
+}
+
+header .refpages .pages li:hover .hovered {
+    display: block;
+    cursor: pointer;
+    animation-name: opacityAn;
+    animation: opacityAn 1s linear forwards;
+}
+
+header .refpages .pages li .hovered li:hover {
+    color: black;
+}
+
+@keyframes opacityAn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* HEADER */
+
+.slider {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.slider-container {
+    position: relative;
+    height: 100%;
+    transition: all 0.7s;
+}
+
+.slider .slider-item {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+}
+
+.slider .slider-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -20;
+    position: relative;
+}
+
+.slider .slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+    outline-style: none;
+    z-index: 20
+}
+
+.slider .slider-button.slider-button-left {
+    left: 10px;
+}
+
+.slider .slider-button.slider-button-right {
+    right: 10px;
+}
+
+.myslider {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.myslider .phone h2 {
+    color: white;
+    font-size: 70px;
+    z-index: 2;
+    position: absolute;
+    top: 20%;
+    left: 20%;
+}
+
+.myslider .phone h1 {
+    color: white;
+    font-size: 85px;
+    z-index: 2;
+    position: absolute;
+    top: 30%;
+    left: 14.2%;
+}
+
+.myslider .phone p {
+    color: white;
+    font-size: 13px;
+    z-index: 2;
+    position: absolute;
+    top: 55%;
+    letter-spacing: 1em;
+    left: 14.2%;
+}
+
+.myslider .phone .upbord {
+    display: inline-block;
+    width: 10%;
+    height: 2%;
+    position: absolute;
+    top: 52%;
+    left: 20%;
+    border-top: 1px solid white
+}
+
+.myslider .phone .botbord {
+    display: inline-block;
+    width: 10%;
+    height: 2%;
+    position: absolute;
+    top: 62%;
+    left: 20%;
+    border-top: 1px solid white
+}
+
+.myslider .girl h2 {
+    color: white;
+    font-size: 70px;
+    z-index: 2;
+    position: absolute;
+    top: 20%;
+    left: 20%;
+}
+
+.myslider .girl h1 {
+    color: white;
+    font-size: 116px;
+    z-index: 2;
+    position: absolute;
+    top: 29%;
+    left: 15%;
+}
+
+.myslider .girl p {
+    color: white;
+    font-size: 13px;
+    z-index: 2;
+    position: absolute;
+    top: 57%;
+    letter-spacing: 1em;
+    left: 22%;
+}
+
+.myslider .girl .upbord {
+    display: inline-block;
+    width: 10%;
+    height: 2%;
+    position: absolute;
+    top: 55%;
+    left: 27%;
+    border-top: 1px solid white
+}
+
+.myslider .girl .botbord {
+    display: inline-block;
+    width: 10%;
+    height: 2%;
+    position: absolute;
+    top: 64%;
+    left: 27%;
+    border-top: 1px solid white
+}
+
+.myslider .girl .square {
+    width: 27%;
+    height: 66%;
+    background-color: transparent;
+    border: 3px solid white;
+    position: absolute;
+    top: 10%;
+    left: 40%;
+}
+
+.myslider .city .smaller {
+    position: absolute;
+    font-size: 30px;
+    top: 30%;
+    left: 15%;
+    color: black;
+    font-weight: lighter;
+    background-color: white;
+}
+
+.myslider .city .bigger {
+    position: absolute;
+    font-size: 50px;
+    top: 40%;
+    left: 15%;
+    color: white;
+    font-weight: normal;
+    background-color: #fd602c;
+}
+
+.myslider .city p {
+    width: 40%;
+    position: absolute;
+    top: 55%;
+    left: 15%;
+    color: white;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.myslider .city .transparent {
+    width: 12%;
+    height: 8%;
+    border-radius: 125px;
+    position: absolute;
+    padding: 0% 2%;
+    top: 68%;
+    left: 15%;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    outline: none;
+    transition: background 0.3s ease;
+}
+
+.myslider .city .transparent:hover {
+    background-color: white;
+    color: black;
+}
+
+.myslider .city .whitebut {
+    width: 12%;
+    height: 8%;
+    border-radius: 125px;
+    position: absolute;
+    padding: 0% 2%;
+    top: 68%;
+    left: 28%;
+    background-color: white;
+    color: black;
+    border: 2px solid white;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.myslider .city .whitebut:hover {
+    background-color: #fd602c;
+    color: white;
+    border: 2px solid #fd602c;
+}
+
+.myslider .below {
+    position: absolute;
+    top: -50%;
+    width: 5%;
+    height: 5%;
+    left: 55%;
+}
+
+.aboutUs {
+    clear: both;
+    width: 100%;
+    overflow: hidden;
+}
+
+.aboutUs .intro {
+    margin-top: 8%;
+}
+
+.aboutUs .intro h4 {
+    text-align: center;
+    font-weight: normal;
+    letter-spacing: 0.3em;
+    margin-bottom: 0;
+}
+
+.aboutUs .intro span {
+    font-size: 45px;
+    letter-spacing: 0.2em;
+    line-height: 0.8em;
+}
+
+.aboutUs .intro .black {
+    margin-left: 38.5%;
+    padding-right: 2%;
+}
+
+.aboutUs .intro .orange {
+    color: #fd602c;
+}
+
+.aboutUs .images {
+    padding: 5% 0%;
+    width: 100%;
+}
+
+.aboutUs .images .imgcircle {
+    width: 70%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+.aboutUs .images img {
+    width: 100%;
+    height: 100%;
+}
+
+.aboutUs .images .circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 65%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 30%;
+    border-radius: 50%;
+    background-color: #fd602cdc;
+    color: white;
+    font-size: 23px;
+    font-weight: normal
+}
+
+.aboutUs .images .writings p {
+    width: 80%;
+    color: #84848d;
+}
+
+.aboutUs .images .writings i {
+    color: #fd602c;
+    transition: color ease 0.3s;
+}
+
+.aboutUs .images .writings i:hover {
+    color: #000;
+}
+
+.offers {
+    clear: both;
+    width: 100%;
+    background-color: rgb(245, 243, 243);
+}
+
+.offers .bg-image {
+    padding-left: 0;
+}
+
+.offers .offerimage {
+    width: 50%;
+    background: url("http://codelayers.net/templates/hasta/corporate/fullwidth/images/766.jpg") center center;
+    height: 100vh;
+    position: relative;
+}
+
+.offers .ouroffers {
+    background-color: white;
+    width: 50%;
+    padding: 2% 7%;
+    position: absolute;
+    top: 8%;
+    left: 45%;
+}
+
+.offers .ouroffers h4 {
+    letter-spacing: 0.4em;
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.offers .ouroffers h1 {
+    margin-bottom: 2%;
+    font-size: 35px;
+    letter-spacing: 0.2em;
+}
+
+.offers .ouroffers h1 span {
+    color: #fd602c;
+}
+
+.borderedleft {
+    width: 5%;
+    line-height: 1px;
+    border-top: 2px solid black;
+    margin-bottom: 10%;
+}
+
+.offers .ouroffers .alloff p {
+    font-size: 15px;
+    color: #84848d;
+}
+
+.offers .ouroffers .alloff i {
+    color: #fd602c;
+    margin-right: 3%;
+}
+
+.offers .ouroffers .similarbut {
+    margin-top: 20%;
+}
+
+.creativity {
+    clear: both;
+    position: relative;
+}
+
+.creativity .image {
+    padding: 3% 0%;
+}
+
+.creativity .image .imagekeeper {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.creativity .image .imagekeeper img {
+    width: 100%;
+    height: 100%;
+}
+
+.creativity .writings {
+    padding-top: 20%;
+}
+
+.creativity .writings i {
+    padding: 20px;
+    border: 1px solid lightgrey;
+    border-radius: 50%;
+}
+
+.creativity .writings button {
+    width: 40%;
+    margin-top: 5%;
+}
+
+.youtubevideo .video {
+    margin: 0;
+    padding: 0;
+}
+
+.ourteam {
+    padding: 8% 0%;
+}
+
+.ourteam .upper h5 {
+    text-align: center;
+    font-weight: normal;
+    letter-spacing: 0.4em;
+}
+
+.ourteam h2 {
+    text-align: center;
+}
+
+.ourteam .members {
+    padding: 4% 0% 2% 0%;
+}
+
+.ourteam .members .imgkeeper {
+    width: 100%;
+    overflow: hidden;
+}
+
+.ourteam .members .imgkeeper img {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.2s ease-in-out;
+}
+
+.ourteam .members .info {
+    background-color: white;
+    border: 1px solid lightgrey;
+    padding: 20% 2%;
+    transition: transform 0.250s ease-in-out
+}
+
+.ourteam .members .info h5 {
+    text-align: center;
+    font-weight: normal;
+}
+
+.ourteam .members .info p {
+    text-align: center
+}
+
+.ourteam .a-member:hover .info {
+    transform: translateY(-28%)
+}
+
+.ourteam .a-member:hover .imgkeeper img {
+    transform: scale(1.1, 1.1)
+}
+
+/* Services */
+
+.services {
+    clear: both;
+    width: 100%;
+    background-color: rgb(245, 243, 243);
+}
+
+.services .bg-image {
+    padding-left: 0;
+}
+
+.services .bg-img {
+    width: 50%;
+    background: url("http://codelayers.net/templates/hasta/corporate/fullwidth/images/774.jpg") center center;
+    height: 100vh;
+    position: relative;
+}
+
+.services .ourservices {
+    background-color: white;
+    width: 50%;
+    padding: 2% 7%;
+    position: absolute;
+    top: 8%;
+    left: 45%;
+}
+
+.services .ourservices>h4 {
+    letter-spacing: 0.4em;
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.services .ourservices h1 {
+    margin-bottom: 2%;
+    font-size: 35px;
+    letter-spacing: 0.2em;
+}
+
+.services .ourservices .similarbut {
+    margin-top: 8%;
+}
+
+.services .alloff .iconside {
+    margin-left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+    border: 1px solid lightgray;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.services .alloff h5 {
+    margin: 20px 0px;
+    ;
+    text-align: center;
+}
+
+.services .iconside i {
+    font-size: 35px;
+}
+
+.services .alloff p {
+    color: #84848d;
+    text-align: center;
+    overflow: hidden;
+}
+
+.services .alloff .iconside {
+    transition: color 0.2s ease;
+    transition: background 0.2s ease
+}
+
+.services .a-service:hover .iconside {
+    background-color: #fd602c;
+    color: white
+}
+
+.services .a-service:hover h5 {
+    color: #fd602c;
+}
+
+/* WORKS */
+
+.works {
+    padding: 5% 0%;
+}
+
+.works .upper h5 {
+    text-align: center;
+    letter-spacing: 0.4em;
+    font-weight: lighter;
+}
+
+.works .upper h2 {
+    text-align: center;
+    letter-spacing: 0.2em;
+}
+
+.works .images {
+    padding: 0;
+}
+
+.works .images .imgkeeper {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.works img {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.4s ease
+}
+
+.works .imgkeeper .hidden {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.582);
+    color: white;
+}
+
+.works .imgkeeper:hover .hidden {
+    display: block;
+    padding: 5%;
+}
+
+.works .imgkeeper:hover img {
+    transform: scale(1.3, 1.3)
+}
+
+.subscribe {
+    background-color: #fd602c;
+    padding: 5% 0%;
+}
+
+.subscribe input {
+    width: 85%;
+    height: 50%;
+    padding: 1% 3%;
+    margin-right: 0;
+    color: white;
+    background-color: transparent;
+    border: 1px solid lightgrey;
+    position: relative;
+}
+
+.subscribe button {
+    width: 12%;
+    margin: 0;
+    background-color: white;
+    border: 1px solid white;
+    padding: 0;
+    height: 50%;
+    position: absolute;
+    transition: 0.3s ease;
+}
+
+.subscribe button:hover {
+    background-color: black;
+    border: 1px solid black;
+    color: white;
+}
+
+.processnum {
+    padding: 5% 0%;
+}
+
+.upper h5 {
+    text-align: center;
+    font-weight: normal;
+    letter-spacing: 0.4em;
+}
+
+.processnum .allnum {
+    padding: 3% 0% 8% 0%;
+    border-bottom: 1px solid lightgray
+}
+
+.processnum .ourprocess .allnum .imgkeeper {
+    display: flex;
+    justify-content: center;
+}
+
+.processnum .allnum .writings h5, .processnum .allnum .writings p {
+    text-align: center;
+}
+
+/* for ease of access */
+
+.news {
+    padding: 5% 0% 5% 0%;
+}
+
+.news .allnews {
+    padding: 5% 0%;
+}
+
+.news .imgkeeper {
+    width: 100%;
+    height: 80%;
+    overflow: hidden;
+    position: relative;
+}
+
+.news .imgkeeper img {
+    width: 100%;
+    height: 90%;
+}
+
+.news .imgkeeper .bg-image {
+    width: 50%;
+    position: absolute;
+    top: 82.5%;
+    left: 10%;
+}
+
+.news .imgkeeper .date {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    height: 25%;
+    position: absolute;
+    top: 57%;
+    left: 73%;
+    background-color: #fd602c;
+}
+
+.news .link h2 a {
+    color: black !important
+}
+
+.news .link .icons i {
+    color: #b9b9b9;
+    font-weight: lighter;
+    font-size: 14px;
+}
+
+.news .link .icons {
+    padding: 3% 0%;
+}
+
+.news .link .icons i:nth-child(2), .news .link .icons i:nth-child(3) {
+    margin-left: 4%;
+}
+
+.parallax {
+    width: 100%;
+    height: 70vh;
+    background: url("http://codelayers.net/templates/hasta/corporate/fullwidth/images/776.jpg") 100% center;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.parallax::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.parallax h3 {
+    color: white;
+    text-align: center;
+    letter-spacing: 0.4em;
+    padding-top: 10%;
+    font-size: 20px;
+    z-index: 1000;
+}
+
+.parallax h1 {
+    color: white;
+    z-index: 1000;
+    text-align: center;
+    font-size: 100px;
+}
+
+.parallax .similarbut {
+    margin-left: 50%;
+    margin-top: 3%;
+    transform: translateX(-50%);
+    width: 12%;
+    padding: 0.7% 2%;
+    z-index: 1000;
+}
+
+.parallax .writings {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.packages {
+    padding: 5% 0%;
+}
+
+.packages .a-table {
+    padding: 10% 0;
+}
+
+.packages .pro-table {
+    padding: 8.5% 0%;
+}
+
+.packages .price {
+    list-style-type: none;
+    border: 1px solid #f6f6f6;
+    margin: 0;
+    padding: 0;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.packages .price {
+    border: 1px solid lightgrey;
+}
+
+.packages .price .header {
+    background-color: #f6f6f6;
+    color: black;
+    font-size: 25px;
+    text-align: center;
+    border: none;
+    padding-top: 15%;
+}
+
+.packages .price .item {
+    border-bottom: 1px solid lightgrey;
+    background-color: #f6f6f6;
+    padding: 5%;
+    color: #84848d;
+    text-align: center;
+}
+
+.packages .price .grey {
+    background-color: #f6f6f6;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    border-bottom: 1px solid lightgrey;
+    padding-bottom: 15%;
+}
+
+.packages .price .button {
+    background-color: #f6f6f6;
+    padding: 20% 0%;
+}
+
+.packages .price .proitem {
+    color: white;
+    background-color: #fd602c;
+}
+
+.packages .price .probutton .similarbut {
+    background: white;
+    color: black;
+}
+
+.packages .pro-price {
+    position: relative;
+}
+
+.packages .pro-table img {
+    position: absolute;
+    top: 9.6%;
+    left: 42%;
+    z-index: 20;
+}
+
+.packages .similarbut {
+    width: 59%;
+    padding: 3.5% 4%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.packages .probutton .similarbut:hover {
+    background-color: #000;
+    border: 1px solid black;
+    color: white;
+}
+
+.clients {
+    width: 100%;
+    background-attachment: fixed;
+    height: 90vh;
+    position: relative;
+    background: url("http://codelayers.net/templates/hasta/corporate/fullwidth/images/778.jpg");
+    background-size: cover;
+}
+
+.clients::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.clients .upper {
+    padding-top: 6%;
+}
+
+.clients .frame {
+    width: 50%;
+    margin-top: 7%;
+    height: 200px;
+    overflow: hidden;
+    transform: translateX(-50%);
+    margin-left: 50%;
+    position: relative;
+}
+
+.clients .frame .l1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.clients .frame .item2 {
+    position: absolute;
+    top: 0;
+    left: 100%;
+}
+
+.friendfirms {
+    padding: 3% 0%;
+}
+
+.portfolio, .portfolio h2 {
+    padding: 2% 0%;
+}
+
+.portfolio button {
+    background-color: transparent;
+    width: 80%;
+    height: 32%;
+    color: white;
+    border: 1px solid white;
+    margin: 35% 0% 0% 55%;
+    transform: translate(-50%, -50%);
+    transition: 0.3s ease;
+}
+
+.portfolio button:hover {
+    background-color: #fff;
+    border: 1px solid white;
+    color: black
+}
+
+/* FOOTER */
+
+
+footer {
+    position: relative;
+    background-color: #101010;
+    padding-top: 5%;
+}
+
+footer .allcont {
+    color: #727272;
+    font-size: 15px;
+}
+
+footer .allcont .heading {
+    padding: 5% 0% 15% 0%;
+}
+
+footer .linked .heading h4{
+    color: white;
+}
+
+footer .linked .heading .borderedleft {
+    border: 1.5px solid white;
+    width: 10%
+}
+
+footer .linked .images .imag .circleimage {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+footer .linked .images .writings h6 a {
+    color: white;
+    font-size: 17px;
+    transition: 0.2s ease
+}
+
+footer .linked .images .writings h6 a:hover {
+    color: #727272
+}
+footer .linked .images .writings p{
+    margin-bottom: 5px;
+    color: #727272
+}
+footer .linked .images .an-image:nth-child(1){
+    padding-bottom: 10%;
+}
+footer .linked .images .an-image:nth-child(2){
+    padding-top: 10%;
+}
+footer .linked .images .an-image.bord{
+    border-bottom:1px solid lightgrey;
+}
+footer .allbtns{
+    padding: 0% 5%;
+}
+footer .allbtns button:nth-child(even){
+    margin-left: 2%;
+}
+footer .allbtns .marg{
+    margin-top: 5%;
+}
+footer .allbtns button{
+    background-color: transparent;
+    color: #727272;
+    border: 1px solid #727272;
+    padding: 2.5% 3%;
+    transition: 0.3s ease
+}
+footer .allbtns button:hover{
+    color: #fd602c;
+    border: 1px solid  #fd602c
+}
+footer .allbtns .actbut{
+    color: #fd602c;
+    border: 1px solid  #fd602c
+}
+footer .uslinks p a{
+    color: #727272;
+    font-size: 15px;
+    transition: 0.2s ease;
+}
+footer .uslinks p i{
+    padding-right: 20px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0s
+}
+footer .uslinks p:hover a{
+    color: #f1f1f1
+}
+footer{
+    overflow: hidden;
+}
+footer .bottom{
+    width: 1005;
+    height: 100%;
+    background-color: #1a1a1a;
+    padding-bottom: 5%;
+    padding-top: 2%
+}
+footer .bottom .iconUl ul{
+    padding-top: 5%;
+    list-style-type: none;
+    color: white;
+    margin-left: 50%;
+    transform: translateX(-40%)
+}
+footer .bottom .iconUl ul li .circleicon{
+    width: 40px;
+    height: 40px;
+    float: left;
+    border-radius: 40px;
+    background-color: white;
+    color: #fd602c;
+    margin:0 5px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+footer .bottom .iconUl ul li .circleicon:hover{
+    background-color: #fd602c;
+    color: white;
+}

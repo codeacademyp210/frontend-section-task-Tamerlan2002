@@ -1,0 +1,724 @@
+/* with creative scrollbar */
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(73, 51, 199);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(219, 113, 14);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.fixedNav {
+    position: fixed;
+    top: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.bg-white {
+    background-color: white;
+}
+
+.bg-tr {
+    background-color: transparent;
+}
+
+.col-white {
+    color: white !important;
+}
+
+.col-black {
+    color: black !important;
+}
+
+.col-ora {
+    color: #fd602c !important
+}
+
+.br-light {
+    border: 1px solid lightgrey !important
+}
+
+.top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    color: white;
+    background-color: #fd602c;
+    padding: 0.5% 1%;
+    z-index: 2000;
+}
+
+ul {
+    list-style-type: none;
+    width: 100%;
+    height: 100%;
+}
+
+a:hover {
+    text-decoration: none !important;
+}
+
+button:focus {
+    outline: none;
+}
+
+.similarbut {
+    width: 30%;
+    padding: 1.5% 4%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: #fd602c;
+    transition: 0.2s ease;
+    border: 1px solid #fd602c;
+}
+
+.similarbut:hover {
+    background-color: #000;
+    border: 1px solid black;
+}
+
+.bordered {
+    width: 3%;
+    border-bottom: 2px solid black;
+    margin-left: 50%;
+    transform: translate(-50%, 0%);
+    margin-top: 2%;
+}
+
+header {
+    padding-bottom: 0;
+    position: relative;
+    z-index: 111;
+}
+
+header .loginpan {
+    color: #828282;
+    padding: 0%;
+    border-bottom: 1px solid rgb(230, 230, 230)
+}
+
+header .contacts p {
+    display: inline-block;
+    padding: 3% 0%;
+    color: #828282;
+    margin: 0;
+}
+
+header .loginpan p:nth-child(2) {
+    margin-left: 3%;
+}
+
+header .login {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+header .login p {
+    display: inline-block;
+    margin: 3% 0%;
+    color: #828282;
+    border-right: 1px solid #828282;
+    padding-right: 1.5%;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+header .login p:nth-child(2) {
+    margin-left: 1%;
+}
+
+header .login i {
+    margin-left: 2%;
+    color: #828282;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+header .login p:hover {
+    color: black;
+}
+
+header .login i:hover {
+    color: black;
+}
+
+nav {
+    width: 100%;
+    background-color: white;
+    position: sticky;
+    top: 0;
+}
+
+nav .logo img {
+    padding: 5% 0%;
+}
+
+nav .refpages {
+    height: 100%;
+}
+
+nav .pages {
+    padding: 0;
+    margin: 0;
+}
+
+header .refpages .pages li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+    width: 10%;
+    height: 100%;
+    position: relative;
+}
+
+header .refpages .pages li a {
+    display: block;
+    padding: 23% 15%;
+    color: #84848d;
+    font-weight: normal;
+}
+
+header .refpages .pages li .hovered {
+    position: absolute;
+    margin: 0%;
+    padding: 0;
+    width: 200%;
+    height: 100%;
+    top: 100%;
+    left: 0;
+    opacity: 0;
+    display: none;
+    z-index: 100;
+}
+
+header .refpages .pages li .hovered li {
+    width: 100%;
+    height: 100%;
+    color: #84848d;
+    background-color: rgb(243, 243, 243);
+    transition: color 0.2s ease
+}
+
+header .refpages .pages li:hover .hovered {
+    display: block;
+    cursor: pointer;
+    animation-name: opacityAn;
+    animation: opacityAn 1s linear forwards;
+}
+
+header .refpages .pages li .hovered li:hover {
+    color: black;
+}
+
+@keyframes opacityAn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+.intro {
+    background: url("http://codelayers.net/templates/hasta/corporate/fullwidth/images/header-img.jpg") no-repeat center top;
+    height: 35vh;
+    background-size: cover;
+    position: relative;
+    z-index: -1;
+    margin-bottom: 5%;
+}
+
+.intro::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.459);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 20;
+}
+
+.intro .writings {
+    z-index: 50;
+    padding-top: 5%;
+    color: white;
+    text-align: center;
+}
+
+.intro .writings p {
+    font-size: 20px;
+}
+
+
+.info {
+    border-top: 1px solid lightgrey;
+    padding: 5% 0%
+}
+
+.info h4 {
+    color: #fd602c;
+    text-align: center;
+    width: 80%;
+    margin-left: 50%;
+    transform: translateX(-50%)
+}
+
+/* TABS */
+
+.tabs .container {
+    width: 100%;
+    height: 100%;
+    height: 33rem;
+    border-bottom: 1px solid lightgrey
+}
+
+.tabs .tab-contents {
+    position: relative;
+}
+
+.tabs .tab-contents i {
+    color: #fd602c;
+    margin-right: 1rem;
+    margin-top: 0.5rem;
+    font-size: 14px;
+}
+
+.tabs .tab-contents p {
+    color: #828282;
+    font-size: 15px;
+}
+
+.tabs .tab-contents .similarbut {
+    display: inline-block;
+    margin-top: 7%;
+    transition: 0.5s ease
+}
+
+.tabs .tab-contents .br-light:hover {
+    background-color: black !important;
+    color: white !important
+}
+
+.tabs .tab-contents .col-ora:hover {
+    background-color: #fd602c !important;
+    border: 1px solid #fd602c !important;
+    color: white !important
+}
+
+.tab-buttons .tab-button {
+    background: transparent;
+    border: 1px solid #fd602c;
+    padding: 1% 2%;
+    color: black;
+    font-weight: normal;
+    font-size: 18px;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.tab-buttons .tab-button:hover {
+    color: #fd602c !important
+}
+
+.tab-buttons .tab-button:focus {
+    background-color: #fd602c;
+    color: white !important;
+}
+
+.tabs .tab-contents {
+    margin-top: 20px;
+    position: relative;
+    width: 100%;
+    height: 100%
+}
+
+.tab-buttons {
+    padding: 0
+}
+
+.tab-contents .tab-content {
+    position: absolute;
+    animation: tab-opacity 0.4s;
+    top: 0;
+    left: 0;
+}
+
+.tab-contents .tab-content .imgkeeper, .tab-contents .tab-content .imgkeeper img {
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes tab-opacity {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.d-none {
+    display: none;
+}
+
+@media screen and (max-width:768px) {
+    .tabs .container {
+        height: 900px;
+    }
+}
+
+.response {
+    padding: 3% 0 5% 0;
+}
+
+.response .a-response {
+    margin-top: 5%
+}
+
+.response .a-response .iconside {
+    float: left;
+    height: 100%;
+    margin-right: 4%
+}
+
+.response .a-response .iconside .circle {
+    width: 60px;
+    height: 60px;
+    border: 1px solid rgb(197, 197, 197);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.response .a-response .writings p {
+    color: #828282
+}
+
+/* Paralalax  */
+
+.parallax {
+    margin-top: 8%;
+    background: url("http://codelayers.net/templates/hasta/corporate/fullwidth/images/parallax-bg1.jpg");
+    height: 60vh;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    z-index: 2;
+}
+
+.parallax::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.659);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 20;
+}
+
+.parallax .writings {
+    z-index: 50;
+    padding-top: 8%;
+    text-align: center;
+}
+
+.parallax .writings h2 {
+    font-size: 50px;
+    margin-bottom: 2%
+}
+
+.parallax .writings p {
+    width: 60%;
+    margin-left: 50%;
+    transform: translateX(-50%)
+}
+
+.parallax .similarbut {
+    width: 12.5%;
+    padding: 0.9% 1.2%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-top: 2.5%
+}
+
+@media screen and (max-width:768px) {
+    .parallax .writings p {
+        width: 100%;
+    }
+    .parallax .similarbut {
+        width: 50%;
+    }
+}
+
+/* DESIGN */
+
+.design {
+    padding: 5% 0%;
+}
+
+.design .photo img {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.design .photo .writings h4 {
+    margin: 5% 0%;
+    font-weight: lighter;
+}
+
+.design .photo .writings p {
+    font-size: 15px;
+    color: #828282
+}
+
+.design .photo .similarbut {
+    padding: 1.5% 1%;
+}
+
+.design .news {
+    padding: 5% 10%;
+    margin-top: 5%
+}
+
+.design .news h4 {
+    margin: 4% 0
+}
+
+.design .news p {
+    color: #828282
+}
+
+.design .news i {
+    color: #fd602c;
+    transition: color ease 0.3s;
+}
+
+.design .news i:hover {
+    color: #000 !important;
+}
+
+/* FOOTER  */
+
+footer {
+    position: relative;
+    background-color: #101010;
+    padding-top: 5%;
+}
+
+footer .allcont {
+    color: #727272;
+    font-size: 15px;
+}
+
+footer .allcont .heading {
+    padding: 5% 0% 15% 0%;
+}
+
+footer .linked .heading h4 {
+    color: white;
+}
+
+footer .linked .heading .borderedleft {
+    border: 1.5px solid white;
+    width: 10%
+}
+
+footer .linked .images .imag .circleimage {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+footer .linked .images .writings h6 a {
+    color: white;
+    font-size: 17px;
+    transition: 0.2s ease
+}
+
+footer .linked .images .writings h6 a:hover {
+    color: #727272
+}
+
+footer .linked .images .writings p {
+    margin-bottom: 5px;
+    color: #727272
+}
+
+footer .linked .images .an-image:nth-child(1) {
+    padding-bottom: 10%;
+}
+
+footer .linked .images .an-image:nth-child(2) {
+    padding-top: 10%;
+}
+
+footer .linked .images .an-image.bord {
+    border-bottom: 1px solid lightgrey;
+}
+
+footer .allbtns {
+    padding: 0% 5%;
+}
+
+footer .allbtns button:nth-child(even) {
+    margin-left: 2%;
+}
+
+footer .allbtns .marg {
+    margin-top: 5%;
+}
+
+footer .allbtns button {
+    background-color: transparent;
+    color: #727272;
+    border: 1px solid #727272;
+    padding: 2.5% 3%;
+    transition: 0.3s ease
+}
+
+footer .allbtns button:hover {
+    color: #fd602c;
+    border: 1px solid #fd602c
+}
+
+footer .allbtns .actbut {
+    color: #fd602c;
+    border: 1px solid #fd602c
+}
+
+footer .uslinks p a {
+    color: #727272;
+    font-size: 15px;
+    transition: 0.2s ease;
+}
+
+footer .uslinks p i {
+    padding-right: 20px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0s
+}
+
+footer .uslinks p:hover a {
+    color: #f1f1f1
+}
+
+footer {
+    overflow: hidden;
+}
+
+footer .bottom {
+    width: 1005;
+    height: 100%;
+    background-color: #1a1a1a;
+    padding-bottom: 5%;
+    padding-top: 2%
+}
+
+footer .bottom .iconUl ul {
+    padding-top: 5%;
+    list-style-type: none;
+    color: white;
+    margin-left: 50%;
+    transform: translateX(-40%)
+}
+
+footer .bottom .iconUl ul li .circleicon {
+    width: 40px;
+    height: 40px;
+    float: left;
+    border-radius: 40px;
+    background-color: white;
+    color: #fd602c;
+    margin: 0 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+footer .bottom .iconUl ul li .circleicon:hover {
+    background-color: #fd602c;
+    color: white;
+}
+
+@media screen and (max-width:768px) {
+    header .contacts {
+        display: flex;
+        justify-content: center;
+    }
+    header .login {
+        justify-content: center
+    }
+}
+
+@media screen and (max-width:1200px) {
+    .pages {
+        display: flex;
+        font-size: 11px;
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width:768px) {
+    header nav .logo {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width:768px) {
+    footer .bottom ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center
+    }
+}
+
+@media screen and (max-width:768px) {
+    .registration .formDiv {
+        width: 100%;
+        padding: 0;
+        font-size: 13px
+    }
+}
+
